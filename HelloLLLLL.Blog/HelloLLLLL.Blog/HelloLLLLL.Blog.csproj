@@ -1,0 +1,976 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{016E1868-ABE8-4890-AC03-2672A0BE8A8A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HelloLLLLL.Blog</RootNamespace>
+    <AssemblyName>HelloLLLLL.Blog</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44383</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Admin\admin.aspx" />
+    <Content Include="Admin\AdminLogin.aspx" />
+    <Content Include="Admin\css\layuimini.css" />
+    <Content Include="Admin\css\public.css" />
+    <Content Include="Admin\css\themes\default.css" />
+    <Content Include="Admin\images\bg.jpg" />
+    <Content Include="Admin\images\captcha.jpg" />
+    <Content Include="Admin\images\donate_qrcode.png" />
+    <Content Include="Admin\images\favicon.ico" />
+    <Content Include="Admin\images\home.png" />
+    <Content Include="Admin\images\logo.png" />
+    <Content Include="Admin\index.html" />
+    <Content Include="Admin\js\lay-config.js" />
+    <Content Include="Admin\js\lay-module\echarts\echarts.js" />
+    <Content Include="Admin\js\lay-module\echarts\echartsTheme.js" />
+    <Content Include="Admin\js\lay-module\iconPicker\iconPickerFa.js" />
+    <Content Include="Admin\js\lay-module\layarea\layarea.js" />
+    <Content Include="Admin\js\lay-module\layuimini\miniAdmin.js" />
+    <Content Include="Admin\js\lay-module\layuimini\miniMenu.js" />
+    <Content Include="Admin\js\lay-module\layuimini\miniTab.js" />
+    <Content Include="Admin\js\lay-module\layuimini\miniTheme.js" />
+    <Content Include="Admin\js\lay-module\layuimini\miniTongji.js" />
+    <Content Include="Admin\js\lay-module\step-lay\step.css" />
+    <Content Include="Admin\js\lay-module\step-lay\step.js" />
+    <Content Include="Admin\js\lay-module\tableSelect\tableSelect.js" />
+    <Content Include="Admin\js\lay-module\treetable-lay\treetable.css" />
+    <Content Include="Admin\js\lay-module\treetable-lay\treetable.js" />
+    <Content Include="Admin\js\lay-module\wangEditor\wangEditor.css" />
+    <Content Include="Admin\js\lay-module\wangEditor\wangEditor.js" />
+    <Content Include="Admin\js\lay-module\wangEditor\wangEditor.min.css" />
+    <Content Include="Admin\js\lay-module\wangEditor\wangEditor.min.js" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\css\font-awesome.css" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\css\font-awesome.min.css" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\HELP-US-OUT.txt" />
+    <Content Include="Admin\lib\jq-module\jquery.particleground.min.js" />
+    <Content Include="Admin\lib\jq-module\paigusu.min.js" />
+    <Content Include="Admin\lib\jq-module\zyupload\zyupload-1.0.0.min.css" />
+    <Content Include="Admin\lib\jq-module\zyupload\zyupload-1.0.0.min.js" />
+    <Content Include="Admin\lib\jquery-3.4.1\jquery-3.4.1.min.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\layui.css" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\layui.mobile.css" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\code.css" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\laydate\default\laydate.css" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\icon.png" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\layer.css" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\font\iconfont.svg" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\0.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\1.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\10.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\11.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\12.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\13.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\14.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\15.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\16.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\17.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\18.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\19.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\2.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\20.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\21.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\22.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\23.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\24.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\25.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\26.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\27.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\28.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\29.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\3.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\30.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\31.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\32.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\33.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\34.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\35.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\36.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\37.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\38.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\39.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\4.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\40.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\41.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\42.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\43.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\44.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\45.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\46.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\47.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\48.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\49.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\5.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\50.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\51.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\52.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\53.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\54.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\55.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\56.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\57.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\58.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\59.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\6.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\60.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\61.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\62.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\63.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\64.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\65.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\66.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\67.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\68.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\69.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\7.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\70.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\71.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\8.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\images\face\9.gif" />
+    <Content Include="Admin\lib\layui-v2.5.5\layui.all.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\layui.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\carousel.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\code.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\colorpicker.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\element.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\flow.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\form.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\jquery.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\laydate.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\layedit.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\layer.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\laypage.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\laytpl.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\mobile.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\rate.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\slider.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\table.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\transfer.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\tree.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\upload.js" />
+    <Content Include="Admin\lib\layui-v2.5.5\lay\modules\util.js" />
+    <Content Include="Admin\login-2.html" />
+    <Content Include="Admin\page\404.html" />
+    <Content Include="Admin\page\area.html" />
+    <Content Include="Admin\page\button.html" />
+    <Content Include="Admin\page\color-select.html" />
+    <Content Include="Admin\page\editor.html" />
+    <Content Include="Admin\page\form-step.html" />
+    <Content Include="Admin\page\form.html" />
+    <Content Include="Admin\page\icon-picker.html" />
+    <Content Include="Admin\page\icon.html" />
+    <Content Include="Admin\page\layer.html" />
+    <Content Include="Admin\page\LLArticle.aspx" />
+    <Content Include="Admin\page\LLNotice.aspx" />
+    <Content Include="Admin\page\login-1.html" />
+    <Content Include="Admin\page\login-2.html" />
+    <Content Include="Admin\page\menu.html" />
+    <Content Include="Admin\page\setting.html" />
+    <Content Include="Admin\page\table-select.html" />
+    <Content Include="Admin\page\table.html" />
+    <Content Include="Admin\page\table\add.html" />
+    <Content Include="Admin\page\table\ArticleOp.aspx" />
+    <Content Include="Admin\page\table\edit.html" />
+    <Content Include="Admin\page\table\NoticeEdit.aspx" />
+    <Content Include="Admin\page\upload.html" />
+    <Content Include="Admin\page\user-password.html" />
+    <Content Include="Admin\page\user-setting.html" />
+    <Content Include="Admin\page\welcome-1.html" />
+    <Content Include="Admin\page\welcome-2.html" />
+    <Content Include="Admin\page\welcome-3.html" />
+    <Content Include="Admin\page\WelCome.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="kindEditor\kindeditor-all-min.js" />
+    <Content Include="kindEditor\plugins\anchor\anchor.js" />
+    <Content Include="kindEditor\plugins\autoheight\autoheight.js" />
+    <Content Include="kindEditor\plugins\baidumap\baidumap.js" />
+    <Content Include="kindEditor\plugins\baidumap\index.html" />
+    <Content Include="kindEditor\plugins\baidumap\map.html" />
+    <Content Include="kindEditor\plugins\clearhtml\clearhtml.js" />
+    <Content Include="kindEditor\plugins\code\code.js" />
+    <Content Include="kindEditor\plugins\code\prettify.css" />
+    <Content Include="kindEditor\plugins\code\prettify.js" />
+    <Content Include="kindEditor\plugins\emoticons\emoticons.js" />
+    <Content Include="kindEditor\plugins\emoticons\images\0.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\1.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\10.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\100.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\101.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\102.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\103.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\104.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\105.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\106.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\107.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\108.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\109.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\11.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\110.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\111.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\112.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\113.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\114.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\115.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\116.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\117.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\118.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\119.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\12.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\120.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\121.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\122.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\123.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\124.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\125.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\126.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\127.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\128.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\129.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\13.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\130.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\131.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\132.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\133.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\134.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\14.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\15.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\16.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\17.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\18.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\19.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\2.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\20.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\21.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\22.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\23.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\24.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\25.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\26.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\27.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\28.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\29.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\3.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\30.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\31.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\32.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\33.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\34.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\35.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\36.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\37.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\38.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\39.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\4.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\40.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\41.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\42.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\43.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\44.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\45.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\46.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\47.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\48.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\49.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\5.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\50.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\51.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\52.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\53.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\54.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\55.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\56.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\57.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\58.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\59.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\6.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\60.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\61.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\62.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\63.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\64.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\65.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\66.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\67.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\68.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\69.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\7.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\70.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\71.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\72.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\73.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\74.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\75.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\76.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\77.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\78.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\79.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\8.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\80.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\81.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\82.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\83.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\84.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\85.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\86.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\87.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\88.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\89.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\9.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\90.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\91.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\92.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\93.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\94.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\95.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\96.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\97.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\98.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\99.gif" />
+    <Content Include="kindEditor\plugins\emoticons\images\static.gif" />
+    <Content Include="kindEditor\plugins\filemanager\filemanager.js" />
+    <Content Include="kindEditor\plugins\filemanager\images\file-16.gif" />
+    <Content Include="kindEditor\plugins\filemanager\images\file-64.gif" />
+    <Content Include="kindEditor\plugins\filemanager\images\folder-16.gif" />
+    <Content Include="kindEditor\plugins\filemanager\images\folder-64.gif" />
+    <Content Include="kindEditor\plugins\filemanager\images\go-up.gif" />
+    <Content Include="kindEditor\plugins\fixtoolbar\fixtoolbar.js" />
+    <Content Include="kindEditor\plugins\flash\flash.js" />
+    <Content Include="kindEditor\plugins\image\image.js" />
+    <Content Include="kindEditor\plugins\image\images\align_left.gif" />
+    <Content Include="kindEditor\plugins\image\images\align_right.gif" />
+    <Content Include="kindEditor\plugins\image\images\align_top.gif" />
+    <Content Include="kindEditor\plugins\image\images\refresh.png" />
+    <Content Include="kindEditor\plugins\insertfile\insertfile.js" />
+    <Content Include="kindEditor\plugins\lineheight\lineheight.js" />
+    <Content Include="kindEditor\plugins\link\link.js" />
+    <Content Include="kindEditor\plugins\map\map.html" />
+    <Content Include="kindEditor\plugins\map\map.js" />
+    <Content Include="kindEditor\plugins\media\media.js" />
+    <Content Include="kindEditor\plugins\multiimage\images\image.png" />
+    <Content Include="kindEditor\plugins\multiimage\images\select-files-en.png" />
+    <Content Include="kindEditor\plugins\multiimage\images\select-files-zh-CN.png" />
+    <Content Include="kindEditor\plugins\multiimage\images\swfupload.swf" />
+    <Content Include="kindEditor\plugins\multiimage\multiimage.js" />
+    <Content Include="kindEditor\plugins\pagebreak\pagebreak.js" />
+    <Content Include="kindEditor\plugins\plainpaste\plainpaste.js" />
+    <Content Include="kindEditor\plugins\preview\preview.js" />
+    <Content Include="kindEditor\plugins\quickformat\quickformat.js" />
+    <Content Include="kindEditor\plugins\table\table.js" />
+    <Content Include="kindEditor\plugins\template\html\1.html" />
+    <Content Include="kindEditor\plugins\template\html\2.html" />
+    <Content Include="kindEditor\plugins\template\html\3.html" />
+    <Content Include="kindEditor\plugins\template\template.js" />
+    <Content Include="kindEditor\plugins\wordpaste\wordpaste.js" />
+    <Content Include="kindEditor\themes\common\anchor.gif" />
+    <Content Include="kindEditor\themes\common\blank.gif" />
+    <Content Include="kindEditor\themes\common\flash.gif" />
+    <Content Include="kindEditor\themes\common\loading.gif" />
+    <Content Include="kindEditor\themes\common\media.gif" />
+    <Content Include="kindEditor\themes\common\rm.gif" />
+    <Content Include="kindEditor\themes\default\background.png" />
+    <Content Include="kindEditor\themes\default\default.css" />
+    <Content Include="kindEditor\themes\default\default.png" />
+    <Content Include="kindEditor\themes\qq\editor.gif" />
+    <Content Include="kindEditor\themes\qq\qq.css" />
+    <Content Include="kindEditor\themes\simple\simple.css" />
+    <Content Include="res\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="res\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="res\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="res\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="res\lib\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="res\lib\font-awesome\less\animated.less" />
+    <Content Include="res\lib\font-awesome\less\bordered-pulled.less" />
+    <Content Include="res\lib\font-awesome\less\core.less" />
+    <Content Include="res\lib\font-awesome\less\fixed-width.less" />
+    <Content Include="res\lib\font-awesome\less\font-awesome.less" />
+    <Content Include="res\lib\font-awesome\less\icons.less" />
+    <Content Include="res\lib\font-awesome\less\larger.less" />
+    <Content Include="res\lib\font-awesome\less\list.less" />
+    <Content Include="res\lib\font-awesome\less\mixins.less" />
+    <Content Include="res\lib\font-awesome\less\path.less" />
+    <Content Include="res\lib\font-awesome\less\rotated-flipped.less" />
+    <Content Include="res\lib\font-awesome\less\screen-reader.less" />
+    <Content Include="res\lib\font-awesome\less\stacked.less" />
+    <Content Include="res\lib\font-awesome\less\variables.less" />
+    <Content Include="res\lib\font-awesome\scss\font-awesome.scss" />
+    <Content Include="res\lib\font-awesome\scss\_animated.scss" />
+    <Content Include="res\lib\font-awesome\scss\_bordered-pulled.scss" />
+    <Content Include="res\lib\font-awesome\scss\_core.scss" />
+    <Content Include="res\lib\font-awesome\scss\_fixed-width.scss" />
+    <Content Include="res\lib\font-awesome\scss\_icons.scss" />
+    <Content Include="res\lib\font-awesome\scss\_larger.scss" />
+    <Content Include="res\lib\font-awesome\scss\_list.scss" />
+    <Content Include="res\lib\font-awesome\scss\_mixins.scss" />
+    <Content Include="res\lib\font-awesome\scss\_path.scss" />
+    <Content Include="res\lib\font-awesome\scss\_rotated-flipped.scss" />
+    <Content Include="res\lib\font-awesome\scss\_screen-reader.scss" />
+    <Content Include="res\lib\font-awesome\scss\_stacked.scss" />
+    <Content Include="res\lib\font-awesome\scss\_variables.scss" />
+    <Content Include="res\lib\layui\css\modules\layim\html\getmsg.json" />
+    <Content Include="res\lib\layui\font\iconfont.eot" />
+    <Content Include="res\lib\layui\font\iconfont.ttf" />
+    <Content Include="res\lib\layui\font\iconfont.woff" />
+    <Content Include="res\lib\unslider\less\unslider-dots.less" />
+    <Content Include="res\lib\unslider\less\unslider.less" />
+    <Content Include="res\lib\unslider\less\unslider\dots.less" />
+    <Content Include="res\lib\unslider\less\unslider\reset.less" />
+    <Content Include="res\lib\unslider\less\variables.less" />
+    <Content Include="res\lib\unslider\scss\unslider.scss" />
+    <Content Include="res\lib\unslider\scss\unslider\dots.scss" />
+    <Content Include="res\lib\unslider\scss\unslider\reset.scss" />
+    <Content Include="res\lib\unslider\scss\variables.scss" />
+    <Content Include="Admin\api\clear.json" />
+    <Content Include="Admin\api\init.json" />
+    <Content Include="Admin\api\menus.json" />
+    <Content Include="Admin\api\table.json" />
+    <Content Include="Admin\api\tableSelect.json" />
+    <Content Include="Admin\api\upload.json" />
+    <Content Include="Admin\js\lay-module\wangEditor\fonts\w-e-icon.woff" />
+    <Content Include="Admin\js\lay-module\wangEditor\wangEditor.min.js.map" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\fonts\FontAwesome.otf" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\animated.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\bordered-pulled.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\core.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\fixed-width.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\font-awesome.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\icons.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\larger.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\list.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\mixins.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\path.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\rotated-flipped.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\screen-reader.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\stacked.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\less\variables.less" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\font-awesome.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_animated.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_bordered-pulled.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_core.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_fixed-width.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_icons.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_larger.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_list.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_mixins.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_path.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_rotated-flipped.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_screen-reader.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_stacked.scss" />
+    <Content Include="Admin\lib\font-awesome-4.7.0\scss\_variables.scss" />
+    <Content Include="Admin\lib\layui-v2.5.5\font\iconfont.eot" />
+    <Content Include="Admin\lib\layui-v2.5.5\font\iconfont.ttf" />
+    <Content Include="Admin\lib\layui-v2.5.5\font\iconfont.woff" />
+    <Content Include="Admin\lib\layui-v2.5.5\font\iconfont.woff2" />
+    <Content Include="Admin\AdminPostData.ashx" />
+    <Content Include="Admin\Web.config" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="html\about.html" />
+    <Content Include="html\articlelist.html" />
+    <Content Include="html\comment.html" />
+    <Content Include="html\detail.html" />
+    <Content Include="html\index.html" />
+    <Content Include="html\note.html" />
+    <Content Include="html\particle\foot.html" />
+    <Content Include="html\particle\head.html" />
+    <Content Include="html\particle\layout.html" />
+    <Content Include="html\particle\side.html" />
+    <Content Include="html\production.html" />
+    <Content Include="html\record.html" />
+    <Content Include="html\timeline.html" />
+    <Content Include="res\css\about.css" />
+    <Content Include="res\css\article-detail.css" />
+    <Content Include="res\css\article-record.css" />
+    <Content Include="res\css\blog-pace.css" />
+    <Content Include="res\css\comment.css" />
+    <Content Include="res\css\prettify.css" />
+    <Content Include="res\css\site-animate.css" />
+    <Content Include="res\css\site-media.css" />
+    <Content Include="res\css\site.css" />
+    <Content Include="res\css\timeline.css" />
+    <Content Include="res\css\wangEditor.css" />
+    <Content Include="res\images\about_bg1.jpg" />
+    <Content Include="res\images\about_bg2.jpg" />
+    <Content Include="res\images\about_bg3.jpg" />
+    <Content Include="res\images\about_bg4.jpg" />
+    <Content Include="res\images\ali_reward.jpg" />
+    <Content Include="res\images\bg.png" />
+    <Content Include="res\images\bg3.png" />
+    <Content Include="res\images\bg5.png" />
+    <Content Include="res\images\carousel\blog2.png" />
+    <Content Include="res\images\carousel\carousel_001.png" />
+    <Content Include="res\images\cd-icon-location.svg" />
+    <Content Include="res\images\cd-icon-movie.svg" />
+    <Content Include="res\images\cd-icon-picture.svg" />
+    <Content Include="res\images\cover\201705102148110621.jpg" />
+    <Content Include="res\images\cover\201708252044567037.jpg" />
+    <Content Include="res\images\global\handshake.png" />
+    <Content Include="res\images\global\liuyan.png" />
+    <Content Include="res\images\global\Logo_100.png" />
+    <Content Include="res\images\global\Logo_40.png" />
+    <Content Include="res\images\global\Logo_64.png" />
+    <Content Include="res\images\global\messagewall.png" />
+    <Content Include="res\images\global\pinglun.png" />
+    <Content Include="res\images\global\qq_32.png" />
+    <Content Include="res\images\global\qzone_32.png" />
+    <Content Include="res\images\global\reword.jpg" />
+    <Content Include="res\images\global\wechat_32.png" />
+    <Content Include="res\images\global\weibo_32.png" />
+    <Content Include="res\images\global\xitong.png" />
+    <Content Include="res\images\Leo.jpg" />
+    <Content Include="res\images\messagewall.png" />
+    <Content Include="res\images\prd.jpg" />
+    <Content Include="res\images\wx_reward.png" />
+    <Content Include="res\js\blocksit.js" />
+    <Content Include="res\js\comment.js" />
+    <Content Include="res\js\homepage.js" />
+    <Content Include="res\js\jquery.nav.js" />
+    <Content Include="res\js\modernizr.js" />
+    <Content Include="res\js\pace.min.js" />
+    <Content Include="res\js\prettify.js" />
+    <Content Include="res\js\site.js" />
+    <Content Include="res\js\unslider.js" />
+    <Content Include="res\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="res\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="res\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="res\lib\font-awesome\HELP-US-OUT.txt" />
+    <Content Include="res\lib\jquery.event.move.js" />
+    <Content Include="res\lib\jquery.event.swipe.js" />
+    <Content Include="res\lib\layui\css\layui.css" />
+    <Content Include="res\lib\layui\css\layui.mobile.css" />
+    <Content Include="res\lib\layui\css\modules\code.css" />
+    <Content Include="res\lib\layui\css\modules\laydate\default\laydate.css" />
+    <Content Include="res\lib\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="res\lib\layui\css\modules\layer\default\icon.png" />
+    <Content Include="res\lib\layui\css\modules\layer\default\layer.css" />
+    <Content Include="res\lib\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="res\lib\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="res\lib\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="res\lib\layui\css\modules\layim\html\chatlog.html" />
+    <Content Include="res\lib\layui\css\modules\layim\html\find.html" />
+    <Content Include="res\lib\layui\css\modules\layim\html\msgbox.html" />
+    <Content Include="res\lib\layui\css\modules\layim\layim.css" />
+    <Content Include="res\lib\layui\css\modules\layim\mobile\layim.css" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\1.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\2.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\3.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\4.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\5.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\skin\logo.jpg" />
+    <Content Include="res\lib\layui\css\modules\layim\voice\default.mp3" />
+    <Content Include="res\lib\layui\font\iconfont.svg" />
+    <Content Include="res\lib\layui\images\face\0.gif" />
+    <Content Include="res\lib\layui\images\face\1.gif" />
+    <Content Include="res\lib\layui\images\face\10.gif" />
+    <Content Include="res\lib\layui\images\face\11.gif" />
+    <Content Include="res\lib\layui\images\face\12.gif" />
+    <Content Include="res\lib\layui\images\face\13.gif" />
+    <Content Include="res\lib\layui\images\face\14.gif" />
+    <Content Include="res\lib\layui\images\face\15.gif" />
+    <Content Include="res\lib\layui\images\face\16.gif" />
+    <Content Include="res\lib\layui\images\face\17.gif" />
+    <Content Include="res\lib\layui\images\face\18.gif" />
+    <Content Include="res\lib\layui\images\face\19.gif" />
+    <Content Include="res\lib\layui\images\face\2.gif" />
+    <Content Include="res\lib\layui\images\face\20.gif" />
+    <Content Include="res\lib\layui\images\face\21.gif" />
+    <Content Include="res\lib\layui\images\face\22.gif" />
+    <Content Include="res\lib\layui\images\face\23.gif" />
+    <Content Include="res\lib\layui\images\face\24.gif" />
+    <Content Include="res\lib\layui\images\face\25.gif" />
+    <Content Include="res\lib\layui\images\face\26.gif" />
+    <Content Include="res\lib\layui\images\face\27.gif" />
+    <Content Include="res\lib\layui\images\face\28.gif" />
+    <Content Include="res\lib\layui\images\face\29.gif" />
+    <Content Include="res\lib\layui\images\face\3.gif" />
+    <Content Include="res\lib\layui\images\face\30.gif" />
+    <Content Include="res\lib\layui\images\face\31.gif" />
+    <Content Include="res\lib\layui\images\face\32.gif" />
+    <Content Include="res\lib\layui\images\face\33.gif" />
+    <Content Include="res\lib\layui\images\face\34.gif" />
+    <Content Include="res\lib\layui\images\face\35.gif" />
+    <Content Include="res\lib\layui\images\face\36.gif" />
+    <Content Include="res\lib\layui\images\face\37.gif" />
+    <Content Include="res\lib\layui\images\face\38.gif" />
+    <Content Include="res\lib\layui\images\face\39.gif" />
+    <Content Include="res\lib\layui\images\face\4.gif" />
+    <Content Include="res\lib\layui\images\face\40.gif" />
+    <Content Include="res\lib\layui\images\face\41.gif" />
+    <Content Include="res\lib\layui\images\face\42.gif" />
+    <Content Include="res\lib\layui\images\face\43.gif" />
+    <Content Include="res\lib\layui\images\face\44.gif" />
+    <Content Include="res\lib\layui\images\face\45.gif" />
+    <Content Include="res\lib\layui\images\face\46.gif" />
+    <Content Include="res\lib\layui\images\face\47.gif" />
+    <Content Include="res\lib\layui\images\face\48.gif" />
+    <Content Include="res\lib\layui\images\face\49.gif" />
+    <Content Include="res\lib\layui\images\face\5.gif" />
+    <Content Include="res\lib\layui\images\face\50.gif" />
+    <Content Include="res\lib\layui\images\face\51.gif" />
+    <Content Include="res\lib\layui\images\face\52.gif" />
+    <Content Include="res\lib\layui\images\face\53.gif" />
+    <Content Include="res\lib\layui\images\face\54.gif" />
+    <Content Include="res\lib\layui\images\face\55.gif" />
+    <Content Include="res\lib\layui\images\face\56.gif" />
+    <Content Include="res\lib\layui\images\face\57.gif" />
+    <Content Include="res\lib\layui\images\face\58.gif" />
+    <Content Include="res\lib\layui\images\face\59.gif" />
+    <Content Include="res\lib\layui\images\face\6.gif" />
+    <Content Include="res\lib\layui\images\face\60.gif" />
+    <Content Include="res\lib\layui\images\face\61.gif" />
+    <Content Include="res\lib\layui\images\face\62.gif" />
+    <Content Include="res\lib\layui\images\face\63.gif" />
+    <Content Include="res\lib\layui\images\face\64.gif" />
+    <Content Include="res\lib\layui\images\face\65.gif" />
+    <Content Include="res\lib\layui\images\face\66.gif" />
+    <Content Include="res\lib\layui\images\face\67.gif" />
+    <Content Include="res\lib\layui\images\face\68.gif" />
+    <Content Include="res\lib\layui\images\face\69.gif" />
+    <Content Include="res\lib\layui\images\face\7.gif" />
+    <Content Include="res\lib\layui\images\face\70.gif" />
+    <Content Include="res\lib\layui\images\face\71.gif" />
+    <Content Include="res\lib\layui\images\face\8.gif" />
+    <Content Include="res\lib\layui\images\face\9.gif" />
+    <Content Include="res\lib\layui\layui.all.js" />
+    <Content Include="res\lib\layui\layui.js" />
+    <Content Include="res\lib\layui\lay\modules\carousel.js" />
+    <Content Include="res\lib\layui\lay\modules\code.js" />
+    <Content Include="res\lib\layui\lay\modules\element.js" />
+    <Content Include="res\lib\layui\lay\modules\flow.js" />
+    <Content Include="res\lib\layui\lay\modules\form.js" />
+    <Content Include="res\lib\layui\lay\modules\jquery.js" />
+    <Content Include="res\lib\layui\lay\modules\laydate.js" />
+    <Content Include="res\lib\layui\lay\modules\layedit.js" />
+    <Content Include="res\lib\layui\lay\modules\layer.js" />
+    <Content Include="res\lib\layui\lay\modules\layim.js" />
+    <Content Include="res\lib\layui\lay\modules\laypage.js" />
+    <Content Include="res\lib\layui\lay\modules\laytpl.js" />
+    <Content Include="res\lib\layui\lay\modules\mobile.js" />
+    <Content Include="res\lib\layui\lay\modules\table.js" />
+    <Content Include="res\lib\layui\lay\modules\tree.js" />
+    <Content Include="res\lib\layui\lay\modules\upload.js" />
+    <Content Include="res\lib\layui\lay\modules\util.js" />
+    <Content Include="res\lib\unslider\js\unslider.js" />
+    <Content Include="res\lib\unslider\scss\unslider.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Site.Master" />
+    <Content Include="UpImgs\20200606\20200606232.jpg" />
+    <Content Include="UpImgs\20200606\20200606850.jpg" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\AdminPostData.ashx.cs">
+      <DependentUpon>AdminPostData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\LLArticle.aspx.cs">
+      <DependentUpon>LLArticle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\LLArticle.aspx.designer.cs">
+      <DependentUpon>LLArticle.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\LLNotice.aspx.cs">
+      <DependentUpon>LLNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\LLNotice.aspx.designer.cs">
+      <DependentUpon>LLNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\table\ArticleOp.aspx.cs">
+      <DependentUpon>ArticleOp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\table\ArticleOp.aspx.designer.cs">
+      <DependentUpon>ArticleOp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\table\NoticeEdit.aspx.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\table\NoticeEdit.aspx.designer.cs">
+      <DependentUpon>NoticeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\WelCome.aspx.cs">
+      <DependentUpon>WelCome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\WelCome.aspx.designer.cs">
+      <DependentUpon>WelCome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HelloLLLLL.Blog.Common\HelloLLLLL.Blog.Common.csproj">
+      <Project>{a6b26820-df74-4ac5-a507-d729a6feedfd}</Project>
+      <Name>HelloLLLLL.Blog.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HelloLLLLL.Blog.Models\HelloLLLLL.Blog.Models.csproj">
+      <Project>{22dce437-705d-44e9-87cb-5eb52a21c5a5}</Project>
+      <Name>HelloLLLLL.Blog.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58798</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44383/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
