@@ -913,6 +913,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="UpFiles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

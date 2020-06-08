@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ImgJson.cs" />
+    <Compile Include="LLArticle.cs" />
+    <Compile Include="LLType.cs" />
     <Compile Include="LoginInfo.cs" />
     <Compile Include="Notice.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

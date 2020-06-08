@@ -22,13 +22,13 @@
                 <form class="layui-form layui-form-pane" >
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">公告标题</label>
+                            <label class="layui-form-label">文章标题</label>
                             <div class="layui-input-inline">
-                                <input type="text" name="NoticeTitle" autocomplete="off" class="layui-input"/>
+                                <input type="text" name="LLTitle" autocomplete="off" class="layui-input"/>
                             </div>
                         </div>
                   <div class="layui-inline">
-                    <label class="layui-form-label">公告日期</label>
+                    <label class="layui-form-label">发表日期</label>
                     <div class="layui-input-inline">
                         <input type="text" name="DataStart" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input"/>
                     </div>
@@ -73,7 +73,7 @@
 
         table.render({
             elem: '#currentTableId',
-            url: '/Admin/AdminPostData.ashx?action=notice',
+            url: '/Admin/AdminPostData.ashx?action=article',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter' , {
                 title: '提示',
@@ -83,9 +83,13 @@
             cols: [[
                 {type: "checkbox", width: 50},
                 {field: 'Id', width: 80, title: 'ID', sort: true},
-                {field: 'Title', width: 200, title: '公告标题'},
-                { field: 'NoticeTime', width: 160, title: '公告时间', sort: true},
-                { field: 'NoticeContent', width: 400, title: '公告类容'},
+                {field: 'Title', width: 300, title: '文章标题'},
+                { field: 'ReadCount', width: 100, title: '阅读数', sort: true},
+                { field: 'CommentCount', width: 100, title: '评论数', sort: true },
+                { field: 'PresentCount', width: 100, title: '点赞数', sort: true },
+                { field: 'Content', width: 180, title: '内容', display:'none'},
+                { field: 'Digest', width: 180, title: '摘要', display:'none'},
+                { field: 'ReadPwd', width: 180, title: '密码', display:'none'},
                 {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
@@ -156,16 +160,19 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['100%', '100%'],
-                    content: '../page/table/ArticleOp.aspx',
-                    success: function (layero, index) {
-                        console.log(data.username);
+                    content: '../page/table/ArticleOp.aspx?Id='+data.Id,
+                    success: function (layero, index) {                        
                         var body = layer.getChildFrame('body', index);
                         console.log(body); 
-                        console.log(body.find('#noticeTitle').val()); 
-                        body.find('#noticeId').val(data.Id);
-                        body.find('#noticeTitle').val(data.Title);
-                        body.find('#noticeTime').val(data.NoticeTime);
-                        body.find('.w-e-text').html(data.NoticeContent);
+                        body.find("#artId").val(data.Id);
+                        body.find('#digest').val(data.Digest);
+                        body.find('#artTitle').val(data.Title);
+                        body.find('#digest').val(data.Digest);
+                       // body.find(".ke-edit-iframe")..html(data.Content);
+                        var edF = body.find(".ke-edit-iframe");
+                        $(edF).contents().find(".ke-content").html(data.Content);
+                        body.find('#artPwd').val(data.ReadPwd);
+
                     }           
                 });
                 $(window).on("resize", function () {

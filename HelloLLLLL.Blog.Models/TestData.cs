@@ -73,5 +73,68 @@ namespace HelloLLLLL.Blog.Models
             return listNotice;
 
         }
+   
+        public static List<LLArticle> GetArticle()
+        {
+            List<LLArticle> lstArti = new List<LLArticle>();
+
+            lstArti.Add(new LLArticle
+            {
+                Id = 1,
+                Title = "博文一",
+                Digest = "摘要一",
+                Content = "12312431",
+                ReadCount = 10,
+                PresentCount = 20,
+                CommentCount = 30,
+                CreateTime = "2020-1-1 12:30",
+                ReadPwd = "1234",
+                ArtTypeName = new List<string> { "type1", "type2" },
+                ArtType = new List<int> { 1, 2 }
+            });
+            lstArti.Add(new LLArticle
+            {
+                Id = 2,
+                Title = "博文2",
+                Digest = "摘要2",
+                Content = "adfadfadwfadf",
+                ReadCount = 10,
+                PresentCount = 20,
+                CommentCount = 30,
+                CreateTime = "2010-2-1 12:30",
+                ReadPwd = "",
+                ArtTypeName = new List<string> { "type2", "type3" },
+                ArtType = new List<int> { 1, 2 }
+            });
+
+            return lstArti;
+        }
+    
+        public static List<LLType> GetLLType()
+        {
+            List<LLType> lstType = new List<LLType>();
+
+            lstType.Add(new LLType()
+            {
+                Id = 1,
+                TypeName = "type1"
+            });
+            lstType.Add(new LLType()
+            {
+                Id = 2,
+                TypeName = "type2"
+            });
+            lstType.Add(new LLType()
+            {
+                Id = 3,
+                TypeName = "type3"
+            });
+            lstType.Add(new LLType()
+            {
+                Id = 4,
+                TypeName = "type4"
+            });
+            return lstType;
+        }
     }
 }
