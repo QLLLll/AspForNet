@@ -19,7 +19,7 @@
 </head>
 <body>
 <div class="layui-form layuimini-form">
-    <div class="layui-form-item">
+    <div class="layui-form-item" style="width: 350px;">
         <label class="layui-form-label required">公告标题</label>
         <div class="layui-input-block" >
             <input type="hidden" id="noticeId" value="" name="noticeId" />
@@ -27,7 +27,7 @@
             <tip>填写自己管理账号的名称。</tip>
         </div>
     </div>
-    <div class="layui-inline">
+    <div class="layui-form-item">
                     <label class="layui-form-label">公告日期</label>
                     <div class="layui-input-inline">
                         <input type="text" id="noticeTime" name="DataStart"  lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input"/>

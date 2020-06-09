@@ -54,6 +54,18 @@
           "target": "_self"
         },
         {
+          "title": "分类信息",
+          "href": "page/LLArticleType.aspx",
+          "icon": "fa fa-list-alt",
+          "target": "_self"
+        },
+        {
+          "title": "评论管理",
+          "href": "page/LLComment.aspx",
+          "icon": "fa fa-list-alt",
+          "target": "_self"
+        },
+        {
           "title": "系统设置",
           "href": "page/setting.html",
           "icon": "fa fa-gears",
@@ -145,7 +157,7 @@
           "icon": "fa fa-bullhorn",
           "target": "_self"
         }
-        
+
       ]
     },
     {

@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LLArticle.aspx.cs" Inherits="HelloLLLLL.Blog.Admin.page.LLArticle" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LLArticleType.aspx.cs" Inherits="HelloLLLLL.Blog.Admin.page.LLArticleType" %>
 
 <!DOCTYPE html>
 
@@ -22,13 +22,13 @@
                 <form class="layui-form layui-form-pane" >
                     <div class="layui-form-item">
                         <div class="layui-inline">
-                            <label class="layui-form-label">文章标题</label>
+                            <label class="layui-form-label">分类标题</label>
                             <div class="layui-input-inline">
                                 <input type="text" name="LLTitle" autocomplete="off" class="layui-input"/>
                             </div>
                         </div>
                   <div class="layui-inline">
-                    <label class="layui-form-label">发表日期</label>
+                    <label class="layui-form-label">创建日期</label>
                     <div class="layui-input-inline">
                         <input type="text" name="DataStart" id="date" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input"/>
                     </div>
@@ -57,7 +57,6 @@
         <table class="layui-hide" id="currentTableId" lay-filter="currentTableFilter"></table>
 
         <script type="text/html" id="currentTableBar">
-            <a class="layui-btn layui-btn-normal layui-btn-xs data-count-edit" lay-event="preView">预览</a>
             <a class="layui-btn layui-btn-normal layui-btn-xs data-count-edit" lay-event="edit">编辑</a>
             <a class="layui-btn layui-btn-xs layui-btn-danger data-count-delete" lay-event="delete">删除</a>
         </script>
@@ -74,7 +73,7 @@
 
         table.render({
             elem: '#currentTableId',
-            url: '/Admin/AdminPostData.ashx?action=article',
+            url: '/Admin/AdminPostData.ashx?action=articleType',
             toolbar: '#toolbarDemo',
             defaultToolbar: ['filter' , {
                 title: '提示',
@@ -84,21 +83,18 @@
             cols: [[
                 {type: "checkbox", width: 50},
                 {field: 'Id', width: 80, title: 'ID', sort: true},
-                {field: 'Title', width: 300, title: '文章标题'},
-                { field: 'ReadCount', width: 100, title: '阅读数', sort: true},
-                { field: 'CommentCount', width: 100, title: '评论数', sort: true },
-                { field: 'PresentCount', width: 100, title: '点赞数', sort: true },
-                { field: 'Content', width: 180, title: '内容', display:'none'},
-                { field: 'Digest', width: 180, title: '摘要', display:'none'},
-                { field: 'ReadPwd', width: 180, title: '密码', display:'none'},
-                {title: '操作', minWidth: 180, toolbar: '#currentTableBar', align: "center"}
+                { field: 'TypeName', width: 200, title: '分类标题'},
+                { field: 'TypeDetail', width: 200, title: '描述'},
+                { field: 'IsHidden', width: 120, title: '是否可见', templet:"#IsHiddenTpl"},
+                { field: 'TypeCTime', width: 280, title: '创建时间', sort: true },
+                {title: '操作', minWidth: 150, toolbar: '#currentTableBar', align: "center"}
             ]],
             limits: [10, 15, 20, 25, 50, 100],
             limit: 5,
             page: true,
             skin: 'line'
         });
-
+        
         // 监听搜索操作
         form.on('submit(data-search-btn)', function (data) {
             var result = JSON.stringify(data.field);
@@ -123,22 +119,23 @@
          * toolbar监听事件
          */
         table.on('toolbar(currentTableFilter)', function (obj) {
-           
-
             if (obj.event === 'add') {  // 监听添加操作
-                //var index = layer.open({
-                //    title: '添加文章',
-                //    type: 2,
-                //    shade: 0.2,
-                //    maxmin:true,
-                //    shadeClose: true,
-                //    area: ['100%', '100%'],
-                //    content: '../page/table/ArticleOp.aspx',
-                //});
-                //$(window).on("resize", function () {
-                //    layer.full(index);
-                //});
-                window.open("../page/table/ArticleOp.aspx", "_blank");
+                var index = layer.open({
+                    title: '添加分类',
+                    type: 2,
+                    shade: 0.2,
+                    maxmin:true,
+                    shadeClose: true,
+                    area: ['100%', '100%'],
+                    content: '../page/table/ArtTypeOp.aspx',
+                    end: function () {
+                        location.reload();
+                    }
+                });
+                $(window).on("resize", function () {
+                    layer.full(index);
+                });
+                
 
             } else if (obj.event === 'delete') {  // 监听删除操作
                 var checkStatus = table.checkStatus('currentTableId')
@@ -154,10 +151,7 @@
 
         table.on('tool(currentTableFilter)', function (obj) {
             var data = obj.data;
-            if (obj.event === 'preView') {
-                window.open("/html/detail.html?Id=" + data.Id, "_blank");
-            }
-            else if (obj.event === 'edit') {
+            if (obj.event === 'edit') {
 
                 var index = layer.open({
                     title: '编辑文章',
@@ -166,20 +160,19 @@
                     maxmin:true,
                     shadeClose: true,
                     area: ['100%', '100%'],
-                    content: '../page/table/ArticleOp.aspx?Id='+data.Id,
+                    content: '../page/table/ArtTypeOp.aspx?Id='+data.Id,
                     success: function (layero, index) {                        
                         var body = layer.getChildFrame('body', index);
                         console.log(body); 
-                        body.find("#artId").val(data.Id);
-                        body.find('#digest').val(data.Digest);
-                        body.find('#artTitle').val(data.Title);
-                        body.find('#digest').val(data.Digest);
-                       // body.find(".ke-edit-iframe")..html(data.Content);
-                        var edF = body.find(".ke-edit-iframe");
-                        $(edF).contents().find(".ke-content").html(data.Content);
-                        body.find('#artPwd').val(data.ReadPwd);
-
-                    }           
+                        body.find("#typeId").val(data.Id);
+                        body.find('#typeDetail').val(data.TypeDetail);
+                        body.find('#typeTitle').val(data.TypeName);
+                        body.find('#typeCTime').val(data.TypeCTime);
+                        body.find('#typeIsHidden').val(data.IsHidden);
+                    },
+                    end: function () {
+                        location.reload();
+                    }
                 });
                 $(window).on("resize", function () {
                     layer.full(index);
@@ -195,6 +188,13 @@
 
     });
 </script>
+    <script type="text/html" id="IsHiddenTpl">
+            {{#  if(d.IsHidden=='0'){}}
+                  显示 
+            {{#  }else{}}
+                隐藏
+            {{# } }}
+        </script>
 
 </body>
 </html>

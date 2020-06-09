@@ -263,6 +263,8 @@
     <Content Include="Admin\page\icon.html" />
     <Content Include="Admin\page\layer.html" />
     <Content Include="Admin\page\LLArticle.aspx" />
+    <Content Include="Admin\page\LLArticleType.aspx" />
+    <Content Include="Admin\page\LLComment.aspx" />
     <Content Include="Admin\page\LLNotice.aspx" />
     <Content Include="Admin\page\login-1.html" />
     <Content Include="Admin\page\login-2.html" />
@@ -272,6 +274,7 @@
     <Content Include="Admin\page\table.html" />
     <Content Include="Admin\page\table\add.html" />
     <Content Include="Admin\page\table\ArticleOp.aspx" />
+    <Content Include="Admin\page\table\ArtTypeOp.aspx" />
     <Content Include="Admin\page\table\edit.html" />
     <Content Include="Admin\page\table\NoticeEdit.aspx" />
     <Content Include="Admin\page\upload.html" />
@@ -834,6 +837,20 @@
     <Compile Include="Admin\page\LLArticle.aspx.designer.cs">
       <DependentUpon>LLArticle.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\page\LLArticleType.aspx.cs">
+      <DependentUpon>LLArticleType.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\LLArticleType.aspx.designer.cs">
+      <DependentUpon>LLArticleType.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\LLComment.aspx.cs">
+      <DependentUpon>LLComment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\LLComment.aspx.designer.cs">
+      <DependentUpon>LLComment.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\page\LLNotice.aspx.cs">
       <DependentUpon>LLNotice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -847,6 +864,13 @@
     </Compile>
     <Compile Include="Admin\page\table\ArticleOp.aspx.designer.cs">
       <DependentUpon>ArticleOp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\page\table\ArtTypeOp.aspx.cs">
+      <DependentUpon>ArtTypeOp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\page\table\ArtTypeOp.aspx.designer.cs">
+      <DependentUpon>ArtTypeOp.aspx</DependentUpon>
     </Compile>
     <Compile Include="Admin\page\table\NoticeEdit.aspx.cs">
       <DependentUpon>NoticeEdit.aspx</DependentUpon>

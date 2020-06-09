@@ -71,7 +71,7 @@
 <body>
     <div class="layui-form layuimini-form">
         <form id="artForm">
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="width: 650px;">
                 <label class="layui-form-label required">文章标题</label>
                 <div class="layui-input-block">
                     <input type="hidden" id="artId" value="" name="ArtId" />
@@ -79,7 +79,7 @@
                 </div>
             </div>
 
-            <textarea id="content1" style="width: 90%; height: 250px; visibility: hidden;"></textarea>
+            <textarea id="content1" style="width: 90%; height: 550px; visibility: hidden;"></textarea>
 
             <div class="layui-form-item">
                 <label class="layui-form-label">文章类别</label>
@@ -99,13 +99,13 @@
             </div>
 
 
-            <div class="layui-form-item layui-form-text">
+            <div class="layui-form-item layui-form-text" style="width: 650px;">
                 <label class="layui-form-label">文章摘要</label>
                 <div class="layui-input-block">
                     <textarea placeholder="请输入内容" id="digest" name="Digest" class="layui-textarea"></textarea>
                 </div>
             </div>
-            <div class="layui-form-item">
+            <div class="layui-form-item" style="width: 350px;">
                 <label class="layui-form-label required">密码保护</label>
                 <div class="layui-input-block">
 

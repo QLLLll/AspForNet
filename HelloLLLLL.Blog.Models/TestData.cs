@@ -117,24 +117,78 @@ namespace HelloLLLLL.Blog.Models
             lstType.Add(new LLType()
             {
                 Id = 1,
-                TypeName = "type1"
+                TypeName = "type1",
+                IsHidden=0,
+                TypeCTime="2020-12-12 04:40",
+                TypeDetail="test test test test"
+
+                
             });
             lstType.Add(new LLType()
             {
                 Id = 2,
-                TypeName = "type2"
+                TypeName = "type2",
+                IsHidden = 0,
+                TypeCTime = "2020-12-12 04:40",
+                TypeDetail = "test test test test"
             });
             lstType.Add(new LLType()
             {
                 Id = 3,
-                TypeName = "type3"
+                TypeName = "type3",
+                IsHidden = 1,
+                TypeCTime = "2020-12-12 04:40",
+                TypeDetail = "test sfghdfghd招待费各色法国 test test"
             });
             lstType.Add(new LLType()
             {
                 Id = 4,
-                TypeName = "type4"
+                TypeName = "type4",
+                IsHidden = 0,
+                TypeCTime = "2016-11-22 14:30",
+                TypeDetail = "啊大师傅打发的"
             });
             return lstType;
+        }
+   
+        public static List<Pinglun> GetLLComment() {
+
+            List<Pinglun> listComment = new List<Pinglun>();
+
+
+            listComment.Add(new Pinglun
+            {
+                Id = 1,
+                ArtId = 1,
+                ArtTitle = "我的第一篇文章",
+                Pubnisher = "HElloLLLLL",
+                PubnishTime = DateTime.Now,
+                Content = @"<p>可以结合这篇文章看看，自定义的membershipprovider<br>
+<a href = 'https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html' target = 'blank' > https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html</a></p>"
+            });
+
+            listComment.Add(new Pinglun
+            {
+                Id = 1,
+                ArtId = 1,
+                ArtTitle = "我的第一篇文章",
+                Pubnisher = "HElloLLLLL",
+                PubnishTime = DateTime.Now,
+                Content = @"<p>可以结合这篇文章看看，自定义的membershipprovider<br>
+<a href = 'https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html' target = 'blank'> https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html</a></p>"
+            });
+            listComment.Add(new Pinglun
+            {
+                Id = 2,
+                ArtId = 2,
+                ArtTitle = "我的第er篇文章",
+                Pubnisher = "HElloLLLLL",
+                PubnishTime = DateTime.Now,
+                Content = @"<p>可以结合这篇文章看看，自定义的membershipprovider<br>
+<a href = 'https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html' target = 'blank'> https://www.cnblogs.com/liuyu7177/archive/2013/05/07/3065052.html</a></p>"
+            });
+
+            return listComment;
         }
     }
 }

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace HelloLLLLL.Blog.Models
 {
-    public class LLType
+     class LLArtType
     {
-        public int Id { get; set; }
-        public string TypeName { get; set; }
 
-        public string TypeDetail { get; set; }
+        public int Id { get; set; }
+
+        public string TypeTile { get; set; }
+
+        public string   TypeDetail { get; set; }
 
         public string TypeCTime { get; set; }
 
@@ -19,13 +21,5 @@ namespace HelloLLLLL.Blog.Models
 
         public int IsHidden { get; set; }
 
-    }
-
-    public class ArtTypeData
-    {
-        public int code { get; set; }
-        public string msg { get; set; }
-        public int count { get; set; }
-        public List<LLType> data { get; set; }
     }
 }

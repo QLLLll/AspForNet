@@ -401,6 +401,67 @@ namespace HelloLLLLL.Blog.Admin
                 context.Response.Write(JsonConvert.SerializeObject(new { IsOk = "Ok", msg = "操作成功" }));
 
             }
+            else if (string.Compare(action, "articleType", false) == 0)
+            {
+                context.Response.ContentType = "application/json";
+                string p = context.Request["page"];
+                string l = context.Request["limit"];
+                int page = -1;
+                if (!string.IsNullOrEmpty(p))
+                    page = int.Parse(p);
+                int limit = -1;
+                if (!string.IsNullOrEmpty(l))
+                    limit = int.Parse(l);
+
+                ArtTypeData data = new ArtTypeData();
+                data.code = 0;
+                data.msg = "ok";
+                var list = TestData.GetLLType();
+                if (page < 0 || limit < 0)
+                {
+                    data.data = list;
+                }
+                else
+                {
+                    data.data = list.Skip((page - 1) * limit).Take(limit).ToList();
+                }
+                data.count = list.Count();
+
+
+
+                context.Response.Write(JsonConvert.SerializeObject(data));
+            }
+            else if (string.Compare(action, "artTypeAE", false) == 0)
+            {
+
+
+                var id = context.Request["TypeId"];
+                var title = context.Request["TypeTitle"];
+                var detail = context.Request["TypeDetail"];
+                var time = context.Request["TypeCTime"];
+                var isHidden = context.Request["TypeIsHidden"];
+                DateTime time1 = DateTime.Now;
+                if (!string.IsNullOrEmpty(time))
+                {
+                    time1 = Convert.ToDateTime(time);
+                }
+
+                //编辑
+                if (!string.IsNullOrEmpty(id))
+                {
+
+                }
+                else
+                {//新增
+
+                }
+
+
+
+                context.Response.Write(JsonConvert.SerializeObject(new { IsOk = "Ok", msg = "操作完成" }));
+
+            }
+            
         }
 
 
